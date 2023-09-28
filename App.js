@@ -1,15 +1,82 @@
+import React from "react"
+import ReactDOM from "react-dom/client"
 
-const heading = React.createElement("div",{id:"parent"},[
-    React.createElement("div",{id:"child 1"},[
-        React.createElement("h1",{},"Hey I am h1 tag"),
-        React.createElement("h2",{},"Hey I am h2 tag")
-    ]),
-    React.createElement("div",{id:"child 2"},[
-        React.createElement("h1",{},"Hey I am h1 tag"),
-        React.createElement("h2",{},"Hey I am h2 tag")
-    ])
-]
-)
+// // header
+//  --logo
+//  -- nav links
+
+//  Body
+//   search bar
+//   restraurant container  
+//   restaurant card
+
+//   footer 
+//   copyright 
+//   links
+//   address
+//   email
+
+
+
+
+const Header = () => {
+  return (
+    <div className="header">
+      
+      <div className="logo-container">
+      <img className="logo" src="https://image.similarpng.com/very-thumbnail/2021/09/Good-food-logo-design-on-transparent-background-PNG.png"></img>
+      </div>
+      
+      <div className="nav-items">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact Us</li>
+            <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+const RestaurantCard=()=>{
+    return (
+        <div className="res-card">
+        <h3>KC</h3>
+        </div>
+    )
+}
+
+const Body=()=>{
+    return(
+        <div className="body">
+         <div className="search-bar">Search</div>
+         <div className="res-container"><RestaurantCard></RestaurantCard></div>
+        </div>
+    )
+}
+
+
+
+const Footer = () => {
+  return (
+    <div>
+   <h3>Footer</h3> 
+    </div>
+  )
+}
+
+const AppLayout=()=>{
+    return(
+        <div className="app" >
+          <Header></Header>
+          <Body></Body>
+          <Footer></Footer>  
+        </div>
+      )
+    }
+     
+
 
 const root=ReactDOM.createRoot(document.getElementById("root"))
-root.render(heading);
+root.render(<AppLayout></AppLayout>);

@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin:20px;
+    border: 1px solid black;
+}
+
+.logo{
+    width: 100px;
+}
+.nav-items>ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 18px;
+   
+}
+
+.res-card{
+    height:260px;
+    width: 220px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.search-bar{
+    margin: 20px;
+}
+
+.nav-items > ul >  li{
+    margin: 20px;
+}
