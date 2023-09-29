@@ -16,16 +16,32 @@
 }
 
 .res-card{
-    height:260px;
+    height:340px;
     width: 220px;
-    border: 1px solid black;
     margin: 20px;
+    background-color: antiquewhite;
+}
+.res-card:hover{
+border: 1px solid black;
+cursor: pointer;
 }
 
-.search-bar{
+.res-container{
+    margin: 50px 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .search-bar{
     margin: 20px;
 }
 
 .nav-items > ul >  li{
     margin: 20px;
+}
+
+.res-logo{
+    width: 95%;
+    height: 50%;
+    padding: 5px;
 }
