@@ -1,17 +1,17 @@
-
+import { CLOUDINARY_URL } from "../utils/constants";
 export const RestaurantCard=({resData})=>{
   
-    console.log(resData)
-    const {resName,stars,time,price,img}=resData;  
+    const {name,avgRating,costForTwo,sla,cloudinaryImageId}=resData;  
+    // console.log(CLOUDINARY_URL+cloudinaryImageId)
     return (
           <div className="res-card">
           
         
-        <img className="res-logo" src={img}></img>
-          <h3>{resName}</h3>
-          <h4>{stars} stars</h4>
-          <h4>{time} mins</h4>
-          <h4>{price} for two</h4>
+        <img className="res-logo" src={CLOUDINARY_URL+cloudinaryImageId}></img>
+          <h3>{name}</h3>
+          <h4>{avgRating} stars</h4>
+          <h4>{sla.deliveryTime} mins</h4>
+          <h4>{costForTwo} </h4>
           
           </div>
       )
