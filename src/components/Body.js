@@ -1,6 +1,6 @@
 import { RestaurantCard } from "./Restaurant";
-import { apiData } from "../utils/mockData";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 export const Body=()=>{
     // console.log(apiData.map(res=>res.resName))
@@ -20,7 +20,9 @@ export const Body=()=>{
         console.log("resArray",restArray)
         console.log(restArray.map(ele=>ele.info.name))
     }
-    
+if(resList.length===0){
+    return <Shimmer></Shimmer>
+}
     return(
         <div className="body">
          <div className="filter"><button className="filter-btn" onClick={

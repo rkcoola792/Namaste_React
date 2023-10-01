@@ -16,7 +16,7 @@
 }
 
 .res-card{
-    height:340px;
+    height:400px;
     width: 220px;
     margin: 20px;
     background-color: antiquewhite;
@@ -44,4 +44,17 @@ cursor: pointer;
     width: 95%;
     height: 50%;
     padding: 5px;
+}
+.shimmer-container{
+    display:flex;
+    margin: 90px 100px;
+    flex-wrap: wrap;
+
+}
+
+.shimmer-card{
+    margin: 20px;
+    width: 220px;
+    height: 400px;
+    background-color: antiquewhite;
 }
