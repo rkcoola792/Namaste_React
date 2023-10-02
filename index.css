@@ -58,3 +58,12 @@ cursor: pointer;
     height: 400px;
     background-color: antiquewhite;
 }
+
+.middle-components{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-container{
+    margin: 0 20px;
+}
