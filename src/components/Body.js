@@ -1,11 +1,14 @@
 import { RestaurantCard } from "./Restaurant";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 export const Body=()=>{
     
     const [resList,setResList]=useState([]);
     const [searchList,setSearchList]=useState("");
+    const [filteredRestaurant,setfilteredRestaurant]=useState([]);
+
     
     useEffect(()=>{
         fetchData();
@@ -19,6 +22,7 @@ export const Body=()=>{
         const restArray= jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
        
         setResList(restArray)
+        setfilteredRestaurant(restArray)
         console.log("resArray",restArray)
         console.log(restArray.map(ele=>ele.info.name))
     }
@@ -32,16 +36,19 @@ if(resList.length===0){
         
         <div className="search-container">
             <input type="text" value={searchList} onChange={(e)=>{setSearchList(e.target.value)}}></input>
-            <button onClick={()=>{setResList(resList.filter(ele=>ele.info.name.toLowerCase().includes(searchList.toLowerCase())))}}>Search</button>
+            <button onClick={()=>{setfilteredRestaurant(resList.filter(ele=>ele.info.name.toLowerCase().includes(searchList.toLowerCase())))}}>Search</button>
         </div>
         
          <div className="filter"><button className="filter-btn" onClick={
-            ()=>{setResList(resList.filter(ele=>ele.info.avgRating>=4.4))}
+            ()=>{setfilteredRestaurant(resList.filter(ele=>ele.info.avgRating>=4.4))}
          }>Top Rated Restaurants</button></div>
         </div>
 
          <div className="res-container">
-         {resList.map((ele,index)=><RestaurantCard key={index} resData={ele.info}></RestaurantCard>
+         {filteredRestaurant.map(ele=>
+         <Link to={"/restaurant/"+ele.info.id} key={ele.info.id}>
+         <RestaurantCard  resData={ele.info}></RestaurantCard>
+         </Link>
          )} 
        
         </div>

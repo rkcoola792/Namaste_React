@@ -1,10 +1,12 @@
+import { useEffect, useState } from "react";
 import { CLOUDINARY_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 export const RestaurantCard=({resData})=>{
-  
+
     const {name,avgRating,costForTwo,sla,cloudinaryImageId}=resData;  
-    // console.log(CLOUDINARY_URL+cloudinaryImageId)
+    
     return (
-          <div className="res-card">
+          <div  className="res-card"><Link to="/restaurant/"></Link>
           
         
         <img className="res-logo" src={CLOUDINARY_URL+cloudinaryImageId}></img>
