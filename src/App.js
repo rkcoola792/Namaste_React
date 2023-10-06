@@ -8,6 +8,7 @@ import { About } from "./components/About"
 import { ErrorPage } from "./components/ErrorPage"
 import Contact from "./components/Contact"
 import RestuarantMenuCard from "./components/RestuarantMenuCard"
+import { SignUp } from "./components/SignUp"
 
 const AppLayout=()=>{
     return(
@@ -39,6 +40,10 @@ const appRouter=createBrowserRouter([
       {
         path:"/restaurant/:resId",
         element:<RestuarantMenuCard></RestuarantMenuCard>
+      },
+      {
+        path:"/sign-up",
+        element:<SignUp></SignUp>
       },
     ]
     }
