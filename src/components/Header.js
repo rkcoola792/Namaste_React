@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { useOnlineStatus } from "../utils/useOnlineStatus";
+import { UserContext } from "../utils/UserContext";
 
 export const Header = () => {
   const onlineStatus = useOnlineStatus();
+  const data=useContext(UserContext);
 
   const [login, setLogin] = useState("Login");
 
@@ -28,6 +30,7 @@ export const Header = () => {
           <li className="my-2 mx-5 hover:text-gray-500 ">
             <Link to="/contact">Contact</Link>
           </li>
+
           <li className="my-2 mx-5 hover:text-gray-500 ">Cart</li>
           <button
             className="my-2 mx-5 hover:text-gray-500"
@@ -37,6 +40,9 @@ export const Header = () => {
           >
             {login}
           </button>
+          <li className="my-2 mx-5 hover:text-gray-500 font-bold">
+            <Link to="/contact">{data.loggedInUser}</Link>
+          </li>
         </ul>
       </div>
     </div>
